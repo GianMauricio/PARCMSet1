@@ -40,11 +40,13 @@ bool PrimeChecker::getState()
 
 void PrimeChecker::run()
 {
+	Sleep(1000);
 	if(this->target > 4)
 	{
 		//If no number until x / 2 divides the number perfectly, no other number will
 		for (int i = lowerBound; i < upperBound; i++)
 		{
+			
 			if (this->target % i == 0)
 			{
 				this->proof = false;
