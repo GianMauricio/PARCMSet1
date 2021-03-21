@@ -23,10 +23,25 @@
  * 256 = 1.770s / 1.675s
  * 2048 = 1.237s???
  * 4096 =
- * 8192> =
+ * 8192 =
  */
 
-//Using...
+//Using Intel Core i7-4790 CPU
+/*
+ * 2 = 5.067/ 4.890 / 4.732
+ * 4 = 3.308 / 3.231 / 3.385
+ * 8 =  2.637 / 2.682 / 2.896
+ * 16 = 2.477 / 2.627/ 2.457
+ * 32 = 2.474 / 2.395 / 2.582
+ * 64 = 2.254 / 2.543 / 2.36
+ * 128 = 2.530 / 2.476 / 2.542
+ * 256 = 
+ * 512 = 
+ * 1024 = 
+ * 2048 = 
+ * 4096 =
+ * 8192 =
+ */
 
 //Typedef the list type
 typedef  std::vector<PrimeChecker*> PrimeTracker;
@@ -44,7 +59,7 @@ int main()
 {
     //Establish data boundaries.
 	int prime = 2147483647;
-	int testcase = 256;
+	int testcase = 128;
 	bool proof = checkNumberWithThreads(prime, testcase);
 
 	if (proof)
