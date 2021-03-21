@@ -35,12 +35,12 @@
  * 32 = 2.474 / 2.395 / 2.582
  * 64 = 2.254 / 2.543 / 2.36
  * 128 = 2.530 / 2.476 / 2.542
- * 256 = 
- * 512 = 
- * 1024 = 
- * 2048 = 
- * 4096 =
- * 8192 =
+ * 256 = 2.424 / 2.563 / 2.437 //There are test cases here where its less than a second
+ * 512 = 1.065 / 2.476 / 2.520
+ * 1024 = 2.508 / 1.872 / 2.542
+ * 2048 =  3.600 / 3.71 / 3.35
+ * 4096 =  4.142 / 3.900 / 4.669
+ * 8192 =  6.642 / 7.230 / 6.538 
  */
 
 //Typedef the list type
@@ -59,7 +59,7 @@ int main()
 {
     //Establish data boundaries.
 	int prime = 2147483647;
-	int testcase = 128;
+	int testcase = 8192;
 	bool proof = checkNumberWithThreads(prime, testcase);
 
 	if (proof)
