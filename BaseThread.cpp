@@ -1,5 +1,6 @@
 #include "BaseThread.h"
 
+//Never instantiate this, if you do you will die
 BaseThread::BaseThread()
 {
 
