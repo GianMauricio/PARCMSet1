@@ -33,9 +33,9 @@
  * 8 =  2.637 / 2.682 / 2.896
  * 16 = 2.477 / 2.627/ 2.457
  * 32 = 2.474 / 2.395 / 2.582
- * 64 = 2.254 / 2.543 / 2.36
- * 128 = 2.530 / 2.476 / 2.542
- * 256 = 2.424 / 2.563 / 2.437 //There are test cases here where its less than a second
+ * 64 = 2.254 / 2.543 / 2.36	88% at peak
+ * 128 = 2.530 / 2.476 / 2.542  69% at peak
+ * 256 = 2.424 / 2.563 / 2.437 //There are test cases here where its less than a second 
  * 512 = 1.065 / 2.476 / 2.520
  * 1024 = 2.508 / 1.872 / 2.542
  * 2048 =  3.600 / 3.71 / 3.35
@@ -59,7 +59,7 @@ int main()
 {
     //Establish data boundaries.
 	int prime = 2147483647;
-	int testcase = 8192;
+	int testcase = 256;
 	bool proof = checkNumberWithThreads(prime, testcase);
 
 	if (proof)
@@ -89,7 +89,7 @@ bool checkNumber(int number)
 bool checkNumberBetter(int number)
 {
 	//If no number until x / 2 divides the number perfectly, no other number will
-	for (int i = 2; i < number / 2; i++)
+	for (int i = 2; i < number / 2 ; i++)
 	{
 		if (number % i == 0)
 		{
@@ -123,23 +123,7 @@ bool checkNumberWithThreads(int number, int threadcount)
 		}
 	}
 
-	/*
-	int halfpoint = number / 2; //Data cast here yeets the decimal
-	int quarterpoint = halfpoint / 2;
 	
-	//The first thread will handle all numbers up to the halfpoint of the halfpoint
-	PrimeChecker* checker1 = new PrimeChecker(1, number, quarterpoint, 2);
-	threadList.push_back(checker1);
-	
-	//The second thread will handle all number after the halfpoint up to the halfpoint
-	PrimeChecker* checker2 = new PrimeChecker(2, number, halfpoint, quarterpoint);
-	threadList.push_back(checker2);
-	
-	//start both threads
-	checker1->start();
-	checker2->start();
-	*/
-
 	
 	bool checking = true;
 	while(checking)
